@@ -11,6 +11,29 @@ const NavItems = ({ onClick = () => { } }) => (
                 </a>
             </li>
         ))}
+
+        <li className="nav-li">
+            <a
+                className="nav-li_a"
+                target="_blank"
+                href="https://github.com/Vignesh6236"
+            >
+                <img
+                    className="invert h-10"
+                    src="/assets/github.png"
+                    alt="github logo"
+                />
+            </a>
+        </li>
+        <li className="nav-li">
+            <a
+                className="nav-li_a"
+                target="_blank"
+                href="https://www.linkedin.com/in/vigneshn6236/"
+            >
+                <img className=" h-11" src="/assets/linkedin.png" alt="github logo" />
+            </a>
+        </li>
     </ul>
 );
 
@@ -43,7 +66,7 @@ const Navbar = () => {
                         />
                     </button>
 
-                    <nav className="sm:flex hidden">
+                    <nav className="sm:flex hidden flex justify-center items-center gap-4">
                         <NavItems />
                     </nav>
                 </div>

@@ -16,7 +16,7 @@ const About = () => {
     };
 
     return (
-        <section className="c-space my-20" id="about">
+        <section className="c-space my-20">
             <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
                 <div className="col-span-1 xl:row-span-3">
                     <div className="grid-container bg-[#121111] border-black">
@@ -124,7 +124,10 @@ const About = () => {
                                     src={hasCopied ? "assets/tick.svg" : "assets/copy.svg"}
                                     alt="copy"
                                 />
-                                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">
+                                <p
+                                    className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white"
+                                    id="work"
+                                >
                                     vigneshn6236@gmail.com
                                 </p>
                             </div>
