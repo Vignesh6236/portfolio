@@ -72,11 +72,16 @@ const Contact = () => {
                 <img
                     src="/assets/terminal.png"
                     alt="terminal-bg"
-                    className="absolute inset-0 h-0 sm:min-h-screen sm:opacity-100 opacity-0"
+                    className="absolute inset-0 h-0 sm:min-h-screen lg:opacity-100 opacity-0"
                 />
 
                 <div className="contact-container">
-                    <h3 className="head-text">Let's Connect!</h3>
+                    <div className="flex gap-4 items-center">
+                        <h3 className="head-text">Let's Connect!</h3>
+                        <a target="_blank" href="https://www.linkedin.com/in/vigneshn6236/">
+                            <img className="h-12" src="/assets/linkedin.png" alt="" />
+                        </a>
+                    </div>
                     <p className="text-lg text-white-600 mt-3">
                         Whether you have a project in mind or are looking for a skilled
                         professional to join your team, I am eager to contribute my
@@ -96,8 +101,8 @@ const Contact = () => {
                                 value={form.name}
                                 onChange={handleChange}
                                 required
-                                className="field-input bg-black "
-                                placeholder="ex., John Doe"
+                                className="field-input bg-black border lg:border-none border-gray-600"
+                                placeholder="ex: John Doe"
                             />
                         </label>
 
@@ -109,8 +114,8 @@ const Contact = () => {
                                 value={form.email}
                                 onChange={handleChange}
                                 required
-                                className="field-input bg-black "
-                                placeholder="ex., johndoe@gmail.com"
+                                className="field-input bg-black border lg:border-none border-gray-600"
+                                placeholder="ex: johndoe@gmail.com"
                             />
                         </label>
 
@@ -122,12 +127,16 @@ const Contact = () => {
                                 onChange={handleChange}
                                 required
                                 rows={5}
-                                className="field-input bg-black "
+                                className="field-input bg-black border lg:border-none border-gray-600"
                                 placeholder="Share your thoughts or inquiries..."
                             />
                         </label>
 
-                        <button className="field-btn" type="submit" disabled={loading}>
+                        <button
+                            className="field-btn border border-gray-500"
+                            type="submit"
+                            disabled={loading}
+                        >
                             {loading ? "Sending..." : "Send Message"}
 
                             <img

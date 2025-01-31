@@ -26,7 +26,7 @@ const Hero = () => {
                     Hi, I am Vignesh <span className="waving-hand">👋</span>
                 </p>
                 <p className="hero_tag text-gray_gradient">
-                    Building Websites and Applications
+                    Building Scalable Web Apps!
                 </p>
             </div>
             <div className="w-full h-full absolute inset-0">
@@ -57,7 +57,7 @@ const Hero = () => {
                 className="absolute bottom-7 left-0 right-0 w-full z-10 c-space id="
                 id="about"
             >
-                <a href="/contact" className="w-fit">
+                <a href="#contact" className="w-fit">
                     <Button
                         name="Let's work together!"
                         isBeam

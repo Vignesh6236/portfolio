@@ -109,23 +109,23 @@ body {
   }
 
   .work-canvas {
-    @apply col-span-1 rounded-lg bg-black-200 border border-black-300;
+    @apply col-span-1 rounded-lg border border-gray-600;
   }
 
   .work-content {
-    @apply col-span-2 rounded-lg bg-black-200 border border-black-300;
+    @apply col-span-2 rounded-lg border border-gray-600;
   }
 
   .work-content_container {
-    @apply grid grid-cols-[auto_1fr] items-start gap-5 transition-all ease-in-out duration-500 cursor-pointer hover:bg-black-300 rounded-lg sm:px-5 px-2.5;
+    @apply grid grid-cols-[auto_1fr] items-start gap-5 transition-all ease-in-out duration-500 cursor-pointer hover:bg-gray-800 rounded-lg sm:px-5 px-2.5;
   }
 
   .work-content_logo {
-    @apply rounded-3xl w-16 h-16 p-2 bg-black-600;
+    @apply rounded-3xl w-16 h-16 p-2;
   }
 
   .work-content_bar {
-    @apply flex-1 w-0.5 mt-4 h-full bg-black-300 group-hover:bg-black-500 group-last:hidden;
+    @apply flex-1 w-0.5 mt-4 h-full group-hover:bg-black group-last:hidden;
   }
 
   /* contact section */
@@ -138,7 +138,7 @@ body {
   }
 
   .field-input {
-    @apply w-full px-5 py-2 min-h-14 rounded-lg text-lg shadow-2xl focus:outline-none;
+    @apply w-full px-5 py-2 min-h-12 rounded-lg text-lg shadow-2xl focus:outline-none;
   }
 
   .field-btn {

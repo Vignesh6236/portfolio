@@ -30,7 +30,7 @@ const About = () => {
                             <p className="grid-headtext">Hi, I'm Vignesh N</p>
                             <p className="grid-subtext">
                                 A web developer with a passion for turning ideas into innovative
-                                web applications.
+                                web applications—on the path to becoming a full-stack engineer.
                             </p>
                         </div>
                     </div>
@@ -47,8 +47,9 @@ const About = () => {
                         <div>
                             <p className="grid-headtext">Tech Stack</p>
                             <p className="grid-subtext">
-                                I specialize in Javascript with a focus on React and Next.js
-                                ecosystems.
+                                I specialize in building modern, high-performance web
+                                applications using MERN & Next.js, with a passion for full-stack
+                                development and scalable solutions.
                             </p>
                         </div>
                     </div>
@@ -79,13 +80,20 @@ const About = () => {
                         </div>
                         <div>
                             <p className="grid-headtext">
-                                I’m very flexible with time zone & locations
+                                Flexible & Open to Remote & On-Site Opportunities
                             </p>
                             <p className="grid-subtext">
-                                I&apos;m based in Bengaluru, India and open to remote work
-                                worldwide.
+                                I&apos;m based in Bengaluru, India, and open to working remotely
+                                anywhere in the world. I’m also available for on-site roles in
+                                Bengaluru.
                             </p>
-                            <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+                            <a href="#contact">
+                                <Button
+                                    name="Contact Me"
+                                    isBeam
+                                    containerClass="w-full mt-10"
+                                />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -101,9 +109,10 @@ const About = () => {
                         <div>
                             <p className="grid-headtext">My Passion for Coding</p>
                             <p className="grid-subtext">
-                                I love solving problems and building things through code.
-                                Programming isn&apos;t just my profession—it&apos;s my passion.
-                                I enjoy exploring new technologies, and enhancing my skills.
+                                I love solving problems and building scalable, efficient
+                                applications. Programming isn’t just my profession—it’s my
+                                passion. I enjoy learning new technologies, optimizing
+                                performance, and tackling challenges that push me to grow.
                             </p>
                         </div>
                     </div>

@@ -36,6 +36,12 @@ const Projects = () => {
     return (
         <section className="c-space my-20 ">
             <p className="head-text">My Work</p>
+            <div className="flex items-center pt-6 gap-3 animatedText text-lg sm:text-xl">
+                All my projects can be found at{" "}
+                <a target="_blank" href="https://github.com/Vignesh6236">
+                    <img className="invert h-10" src="/assets/github.png" alt="" />
+                </a>
+            </div>
 
             <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
                 <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
