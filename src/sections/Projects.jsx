@@ -114,7 +114,7 @@ const Projects = () => {
                     </div>
                 </div>
 
-                <div className="border border-gray-600 bg-black-200 rounded-lg h-96 md:h-full">
+                <div className="hidden md:block border border-gray-600 bg-black-200 rounded-lg h-96 md:h-full">
                     <Canvas>
                         <ambientLight intensity={Math.PI} />
                         <directionalLight position={[10, 10, 5]} />
