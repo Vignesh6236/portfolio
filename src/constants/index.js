@@ -341,4 +341,14 @@ export const workExperiences = [
         icon: "/assets/cair.png",
         animation: "victory",
     },
+    {
+        id: 2,
+        name: "Codegnan",
+        pos: "Software Development Trainee",
+        duration: "July 2024 - Present",
+        title:
+            "As a Software Development Intern at Codegnan, I developed functional React components and built full-stack features using the MERN stack and Next.js.I handled backend integration with Express.js and MongoDB, crafted responsive UIs with Tailwind CSS, and tested RESTful APIs using Postman.I deployed projects through Netlify and Vercel, ensuring fast, reliable hosting and streamlined CI/ CD workflows.I also managed version control with Git to maintain clean, production - ready code.",
+icon: "/assets/codegnan.png",
+    animation: "victory",
+    },
 ];

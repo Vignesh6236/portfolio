@@ -125,7 +125,7 @@ body {
   }
 
   .work-content_bar {
-    @apply flex-1 w-0.5 mt-4 h-full group-hover:bg-black group-last:hidden;
+    @apply flex-1 w-0.5 mt-4 h-full bg-white group-hover:bg-white group-last:hidden;
   }
 
   /* contact section */
