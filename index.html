@@ -1,16 +1,2473 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vignesh N | Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vignesh N — AI/ML Engineer</title>
+  <meta name="description"
+    content="Vignesh N — AI/ML engineer building real-time computer vision, agentic AI, and knowledge-graph systems for defense-grade intelligence platforms." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ============================================================
+   VIGNESH N — portfolio  ·  "reconnaissance console"
+   recon-amber signal on ink · monospace telemetry ·
+   targeting brackets · live detection / knowledge-graph visuals
+   ============================================================ */
+
+    :root {
+      --ink: #0A0D12;
+      --ink-2: #0D121A;
+      --panel: #10161F;
+      --panel-2: #141C27;
+      --line: #1F2A36;
+      --line-2: #2B3A49;
+      --text: #E9EEF3;
+      --muted: #8593A3;
+      --faint: #566373;
+      --signal: #FFB020;
+      --signal-h: #FFC864;
+      --scan: #46C7E8;
+      --graph: #7C9CF0;
+      --maxw: 1180px;
+      --ease: cubic-bezier(.22, .61, .36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 64px 64px;
+      opacity: .14;
+      mask-image: radial-gradient(circle at 50% 30%, #000 0%, transparent 85%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .mono {
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--signal);
+      display: inline-flex;
+      align-items: center;
+      gap: .6em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 1px;
+      background: var(--signal);
+      opacity: .7;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -.01em;
+    }
+
+    /* ---------------- NAV ---------------- */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 28px;
+      transition: background .4s var(--ease), border-color .4s var(--ease), padding .4s var(--ease);
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav.scrolled {
+      background: rgba(10, 13, 18, .72);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      padding: 11px 28px;
+    }
+
+    .brand {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: .9rem;
+      letter-spacing: .06em;
+      display: flex;
+      align-items: center;
+      gap: .55em;
+    }
+
+    .brand .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--signal);
+      box-shadow: 0 0 10px var(--signal);
+      animation: pulse 2.4s infinite;
+    }
+
+    .brand .sub {
+      color: var(--muted);
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .35
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .nav-links a {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .78rem;
+      letter-spacing: .08em;
+      color: var(--muted);
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      color: var(--signal);
+      border: 1px solid var(--line-2);
+      padding: 8px 14px;
+      border-radius: 2px;
+      transition: .2s;
+    }
+
+    .nav-cta:hover {
+      border-color: var(--signal);
+      background: rgba(255, 176, 32, .08);
+    }
+
+    .burger {
+      display: none;
+      background: none;
+      border: 1px solid var(--line-2);
+      border-radius: 3px;
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+
+    .burger span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--text);
+      margin: 4px 0;
+      transition: .3s;
+    }
+
+    /* ---------------- HERO ---------------- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      overflow: hidden;
+    }
+
+    #recon {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: radial-gradient(ellipse at 62% 45%, transparent 30%, rgba(10, 13, 18, .75) 78%), linear-gradient(180deg, transparent 60%, var(--ink) 100%);
+    }
+
+    .hero .wrap {
+      z-index: 3;
+    }
+
+    .hero-status {
+      margin-bottom: 26px;
+    }
+
+    .hero-status .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .status-line {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .8rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .status-line b {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .status-line .live {
+      color: var(--signal);
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 9px;
+      height: 1.05em;
+      background: var(--signal);
+      translate: 0 2px;
+      animation: blink 1.1s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(3.2rem, 10.5vw, 8rem);
+      font-weight: 700;
+      margin: .1em 0 .18em;
+      letter-spacing: -.03em;
+    }
+
+    .hero-thesis {
+      font-size: clamp(1.05rem, 2.1vw, 1.4rem);
+      max-width: 660px;
+      color: #C3CDD8;
+      line-height: 1.55;
+      font-weight: 400;
+    }
+
+    .hero-thesis b {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 14px;
+      margin-top: 38px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .82rem;
+      letter-spacing: .05em;
+      padding: 14px 22px;
+      border-radius: 2px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: .22s var(--ease);
+      background: none;
+      color: inherit;
+    }
+
+    .btn-primary {
+      background: var(--signal);
+      color: #12100A;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background: var(--signal-h);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255, 176, 32, .28);
+    }
+
+    .btn-ghost {
+      border-color: var(--line-2);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--signal);
+      color: var(--signal);
+      transform: translateY(-2px);
+    }
+
+    .btn .arrow {
+      transition: transform .22s var(--ease);
+    }
+
+    .btn:hover .arrow {
+      transform: translate(3px, -3px);
+    }
+
+    .telemetry {
+      display: flex;
+      gap: 10px;
+      margin-top: 44px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .72rem;
+      letter-spacing: .06em;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 7px 12px;
+      border-radius: 2px;
+      background: rgba(16, 22, 31, .5);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chip::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      background: var(--signal);
+      border-radius: 50%;
+    }
+
+    .scrollcue {
+      position: absolute;
+      bottom: 26px;
+      left: 50%;
+      translate: -50% 0;
+      z-index: 3;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .68rem;
+      letter-spacing: .2em;
+      color: var(--faint);
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .scrollcue .bar {
+      width: 1px;
+      height: 34px;
+      background: linear-gradient(var(--signal), transparent);
+      animation: drop 2s infinite;
+    }
+
+    @keyframes drop {
+      0% {
+        opacity: 0;
+        transform: scaleY(.2);
+        transform-origin: top
+      }
+
+      50% {
+        opacity: 1
+      }
+
+      100% {
+        opacity: 0;
+        transform: scaleY(1);
+        transform-origin: top
+      }
+    }
+
+    /* ---------------- MARQUEE ---------------- */
+    .marquee {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--ink-2);
+      overflow: hidden;
+      padding: 15px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .marquee::before,
+    .marquee::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .marquee::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--ink-2), transparent);
+    }
+
+    .marquee::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--ink-2), transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: scroll-x 46s linear infinite;
+    }
+
+    .marquee:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    .marquee-item {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .84rem;
+      letter-spacing: .06em;
+      color: var(--muted);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      white-space: nowrap;
+    }
+
+    .marquee-item::after {
+      content: "◆";
+      color: var(--signal);
+      font-size: .55rem;
+    }
+
+    @keyframes scroll-x {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ---------------- SECTION SHELL ---------------- */
+    .section {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    .section.alt {
+      background: var(--ink-2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      margin-bottom: 54px;
+      max-width: 720px;
+    }
+
+    .section-head .eyebrow {
+      margin-bottom: 16px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 4.4vw, 3rem);
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin-top: 14px;
+      font-size: 1.05rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal.d1 {
+      transition-delay: .08s
+    }
+
+    .reveal.d2 {
+      transition-delay: .16s
+    }
+
+    .reveal.d3 {
+      transition-delay: .24s
+    }
+
+    .bracketed {
+      position: relative;
+    }
+
+    .bracketed::before,
+    .bracketed::after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      pointer-events: none;
+      border: 1.5px solid var(--line-2);
+      transition: border-color .3s var(--ease);
+    }
+
+    .bracketed::before {
+      top: -1px;
+      left: -1px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .bracketed::after {
+      bottom: -1px;
+      right: -1px;
+      border-left: none;
+      border-top: none;
+    }
+
+    .bracketed:hover::before,
+    .bracketed:hover::after {
+      border-color: var(--signal);
+    }
+
+    /* ---------------- PROFILE ---------------- */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .profile-lead {
+      font-size: 1.28rem;
+      line-height: 1.6;
+      color: #D2DAE3;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 500;
+    }
+
+    .profile-body {
+      color: var(--muted);
+      margin-top: 20px;
+    }
+
+    .profile-body b {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .facts {
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      background: var(--panel);
+    }
+
+    .fact {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 15px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fact:last-child {
+      border-bottom: none;
+    }
+
+    .fact .k {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .74rem;
+      letter-spacing: .06em;
+      color: var(--faint);
+      text-transform: uppercase;
+    }
+
+    .fact .v {
+      text-align: right;
+      font-size: .92rem;
+    }
+
+    .fact .v b {
+      color: var(--signal);
+      font-weight: 600;
+    }
+
+    .caps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 60px;
+    }
+
+    .cap {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 3px;
+      padding: 24px 22px 26px;
+      transition: .3s var(--ease);
+    }
+
+    .cap:hover {
+      transform: translateY(-4px);
+      border-color: var(--line-2);
+      background: var(--panel-2);
+    }
+
+    .cap .num {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .72rem;
+      color: var(--signal);
+      letter-spacing: .1em;
+    }
+
+    .cap h3 {
+      font-size: 1.15rem;
+      margin: 16px 0 10px;
+    }
+
+    .cap p {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ---------------- SKILLS ---------------- */
+    .skillset {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .skillcard {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 3px;
+      padding: 24px;
+    }
+
+    .skillcard h3 {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .78rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+      margin: 0 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skillcard h3 .idx {
+      color: var(--signal);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .76rem;
+      padding: 6px 11px;
+      border: 1px solid var(--line-2);
+      border-radius: 2px;
+      color: #BCC7D2;
+      transition: .2s;
+      cursor: default;
+    }
+
+    .tag:hover {
+      border-color: var(--signal);
+      color: var(--signal);
+      background: rgba(255, 176, 32, .06);
+    }
+
+    /* ---------------- EXPERIENCE ---------------- */
+    .timeline {
+      position: relative;
+      margin-left: 6px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 6px;
+      width: 1px;
+      background: var(--line-2);
+    }
+
+    .tl-item {
+      position: relative;
+      padding: 0 0 46px 40px;
+    }
+
+    .tl-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .tl-item::before {
+      content: "";
+      position: absolute;
+      left: -4px;
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--ink);
+      border: 2px solid var(--signal);
+      box-shadow: 0 0 0 4px rgba(255, 176, 32, .1);
+    }
+
+    .tl-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .tl-role {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+
+    .tl-date {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .78rem;
+      color: var(--signal);
+      letter-spacing: .05em;
+      white-space: nowrap;
+    }
+
+    .tl-org {
+      color: var(--muted);
+      font-size: .95rem;
+      margin-top: 4px;
+    }
+
+    .tl-org .loc {
+      color: var(--faint);
+    }
+
+    .tl-list {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 11px;
+    }
+
+    .tl-list li {
+      position: relative;
+      padding-left: 20px;
+      color: #C0CAD5;
+      font-size: .96rem;
+      line-height: 1.55;
+    }
+
+    .tl-list li::before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      color: var(--signal);
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .tl-list b {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .role-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 16px;
+    }
+
+    .role-tags .t {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .7rem;
+      color: var(--faint);
+      border: 1px solid var(--line);
+      padding: 4px 9px;
+      border-radius: 2px;
+    }
+
+    /* ---------------- PROJECTS ---------------- */
+    .projects {
+      display: grid;
+      gap: 20px;
+    }
+
+    .project {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 4px;
+      padding: 30px;
+      transition: .3s var(--ease);
+      position: relative;
+    }
+
+    .project:hover {
+      border-color: var(--line-2);
+      background: var(--panel-2);
+    }
+
+    .project.flagship {
+      border-color: rgba(255, 176, 32, .35);
+    }
+
+    .p-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .p-grid.rev .p-visual {
+      order: 2;
+    }
+
+    .p-grid.rev .p-content {
+      order: 1;
+    }
+
+    .p-content {
+      min-width: 0;
+    }
+
+    .p-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .p-id {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      color: var(--faint);
+      text-transform: uppercase;
+    }
+
+    .p-flag {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .66rem;
+      letter-spacing: .12em;
+      color: var(--signal);
+      border: 1px solid rgba(255, 176, 32, .4);
+      padding: 4px 9px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+
+    .project h3 {
+      font-size: 1.5rem;
+      margin: 0 0 8px;
+    }
+
+    .p-stack {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .78rem;
+      color: var(--scan);
+      margin-bottom: 16px;
+    }
+
+    .p-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+
+    .p-list li {
+      position: relative;
+      padding-left: 20px;
+      color: #BFC9D4;
+      font-size: .93rem;
+      line-height: 1.5;
+    }
+
+    .p-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--signal);
+      font-size: .8rem;
+    }
+
+    .p-list b {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .p-scope {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .p-scope .s {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .68rem;
+      color: var(--muted);
+      background: rgba(70, 199, 232, .06);
+      border: 1px solid rgba(70, 199, 232, .2);
+      padding: 4px 9px;
+      border-radius: 2px;
+    }
+
+    /* project visual frame */
+    .p-visual {
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #080B11;
+    }
+
+    .feedbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--line);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .62rem;
+      letter-spacing: .14em;
+      color: var(--faint);
+      text-transform: uppercase;
+    }
+
+    .feedbar .rec {
+      color: var(--signal);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .feedbar .rec::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--signal);
+      animation: pulse 1.6s infinite;
+    }
+
+    .p-visual svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* svg scene primitives */
+    .s-grid {
+      stroke: var(--line);
+      stroke-width: .5;
+      opacity: .6;
+    }
+
+    .s-mono {
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .s-amber {
+      fill: var(--signal);
+    }
+
+    .s-cyan {
+      fill: var(--scan);
+    }
+
+    .s-muted {
+      fill: var(--muted);
+    }
+
+    .s-faint {
+      fill: var(--faint);
+    }
+
+    /* ---------------- CREDENTIALS ---------------- */
+    .cred-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .cred-card {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 3px;
+      padding: 28px;
+    }
+
+    .cred-card h3 {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .76rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+      margin: 0 0 20px;
+    }
+
+    .edu-deg {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .edu-school {
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: .95rem;
+    }
+
+    .edu-meta {
+      display: flex;
+      gap: 18px;
+      margin-top: 14px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .78rem;
+    }
+
+    .edu-meta span {
+      color: var(--faint);
+    }
+
+    .edu-meta b {
+      color: var(--signal);
+      font-weight: 600;
+    }
+
+    .award {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .award:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .award .medal {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .7rem;
+      color: var(--signal);
+      border: 1px solid rgba(255, 176, 32, .4);
+      border-radius: 2px;
+      padding: 4px 8px;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+
+    .award .aw-t {
+      font-weight: 600;
+      color: var(--text);
+      font-size: .98rem;
+    }
+
+    .award .aw-s {
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    /* ---------------- RESUME ---------------- */
+    .resume-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+
+    .resume-toolbar .hint {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .76rem;
+      color: var(--faint);
+    }
+
+    .resume-paper {
+      background: #F7F7F3;
+      color: #1a1d21;
+      border-radius: 4px;
+      padding: 46px 52px;
+      max-width: 860px;
+      margin: 0 auto;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .5);
+      font-family: "IBM Plex Sans", sans-serif;
+      line-height: 1.5;
+    }
+
+    .rp-name {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      color: #0e1116;
+    }
+
+    .rp-contact {
+      text-align: center;
+      font-size: .8rem;
+      color: #3a4149;
+      margin-top: 8px;
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .rp-contact a {
+      color: #8a5a00;
+    }
+
+    .rp-sec {
+      margin-top: 22px;
+    }
+
+    .rp-sec h4 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.02rem;
+      color: #8a5a00;
+      font-weight: 600;
+      border-bottom: 1.5px solid #cfae72;
+      padding-bottom: 5px;
+      margin: 0 0 12px;
+    }
+
+    .rp-sec p {
+      margin: 0;
+      font-size: .9rem;
+      color: #2a2f35;
+    }
+
+    .rp-skill {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 6px 14px;
+      font-size: .86rem;
+    }
+
+    .rp-skill dt {
+      font-weight: 600;
+      color: #1a1d21;
+    }
+
+    .rp-skill dd {
+      margin: 0;
+      color: #333a41;
+    }
+
+    .rp-entry {
+      margin-bottom: 14px;
+    }
+
+    .rp-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .rp-erow {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+    }
+
+    .rp-erow .t {
+      font-weight: 600;
+      color: #0e1116;
+      font-size: .96rem;
+    }
+
+    .rp-erow .d {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .78rem;
+      color: #5a636c;
+      white-space: nowrap;
+    }
+
+    .rp-sub {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-style: italic;
+      color: #4a525a;
+      font-size: .85rem;
+      margin-top: 1px;
+    }
+
+    .rp-ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+
+    .rp-ul li {
+      font-size: .86rem;
+      color: #2c3239;
+      margin-bottom: 5px;
+      line-height: 1.45;
+    }
+
+    .rp-proj-h {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      margin-top: 10px;
+    }
+
+    .rp-proj-h .t {
+      font-weight: 600;
+      color: #0e1116;
+      font-size: .92rem;
+    }
+
+    .rp-proj-h .s {
+      font-family: "IBM Plex Mono", monospace;
+      font-style: italic;
+      font-size: .74rem;
+      color: #5a636c;
+      text-align: right;
+    }
+
+    /* ---------------- CONTACT ---------------- */
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr .9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .contact-lead h2 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+    }
+
+    .contact-lead p {
+      color: var(--muted);
+      margin-top: 18px;
+      max-width: 440px;
+    }
+
+    .contact-lead .btn {
+      margin-top: 30px;
+    }
+
+    .contact-links {
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      background: var(--panel);
+    }
+
+    .clink {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--line);
+      transition: .25s var(--ease);
+    }
+
+    .clink:last-child {
+      border-bottom: none;
+    }
+
+    .clink:hover {
+      background: var(--panel-2);
+      padding-left: 28px;
+    }
+
+    .clink .lbl {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .72rem;
+      letter-spacing: .1em;
+      color: var(--faint);
+      text-transform: uppercase;
+    }
+
+    .clink .val {
+      font-size: .98rem;
+      color: var(--text);
+    }
+
+    .clink:hover .val {
+      color: var(--signal);
+    }
+
+    .footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer span {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .74rem;
+      color: var(--faint);
+    }
+
+    /* ---------------- RESPONSIVE ---------------- */
+    @media (max-width:960px) {
+      .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .caps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .p-grid,
+      .p-grid.rev {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .p-grid.rev .p-visual {
+        order: 0;
+      }
+
+      .p-grid.rev .p-content {
+        order: 0;
+      }
+
+      .cred-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width:720px) {
+      .nav-links {
+        position: fixed;
+        inset: 0 0 0 auto;
+        width: min(78vw, 320px);
+        background: var(--ink-2);
+        border-left: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 26px;
+        padding: 40px;
+        transform: translateX(100%);
+        transition: transform .4s var(--ease);
+        z-index: 60;
+      }
+
+      .nav-links.open {
+        transform: none;
+      }
+
+      .nav-links a {
+        font-size: 1rem;
+      }
+
+      .burger {
+        display: block;
+        z-index: 70;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .skillset,
+      .caps {
+        grid-template-columns: 1fr;
+      }
+
+      .rp-skill {
+        grid-template-columns: 1fr;
+        gap: 2px 0;
+      }
+
+      .rp-skill dt {
+        margin-top: 8px;
+      }
+
+      .resume-paper {
+        padding: 30px 24px;
+      }
+
+      .wrap {
+        padding: 0 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      * {
+        animation: none !important;
+        scroll-behavior: auto;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ---------------- PRINT ---------------- */
+    @media print {
+
+      body::before,
+      .nav,
+      .hero,
+      .marquee,
+      .section:not(#resume),
+      .footer,
+      .scrollcue,
+      .resume-toolbar {
+        display: none !important;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      #resume {
+        padding: 0;
+      }
+
+      #resume .section-head {
+        display: none;
+      }
+
+      .resume-paper {
+        box-shadow: none;
+        max-width: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      @page {
+        margin: 14mm;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+
+  <!-- ======================= NAV ======================= -->
+  <nav class="nav" id="nav">
+    <a class="brand" href="#top"><span class="dot"></span>VIGNESH&nbsp;N<span class="sub">// AI·ML</span></a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a href="#profile">Profile</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Résumé</a>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+    </div>
+  </nav>
+
+  <!-- ======================= HERO ======================= -->
+  <header class="hero" id="top">
+    <canvas id="recon"></canvas>
+    <div class="wrap">
+      <div class="hero-status">
+        <div class="eyebrow">AI · ML Engineer — Bengaluru, IN</div>
+        <div class="status-line mono"><span class="live">● ACTIVE</span><span>tracking:</span><b id="ticker">drone
+            detection</b><span class="cursor"></span></div>
+      </div>
+      <h1>VIGNESH&nbsp;N</h1>
+      <p class="hero-thesis">I build AI systems that <b>see, read, and reason</b> — real-time detection and tracking,
+        retrieval-augmented intelligence, and multi-agent reasoning for defense-grade platforms.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">Explore projects <span class="arrow">↗</span></a>
+        <a href="#resume" class="btn btn-ghost">View résumé <span class="arrow">↗</span></a>
+      </div>
+      <div class="telemetry">
+        <span class="chip mono">Computer Vision</span>
+        <span class="chip mono">LLMs &amp; Agents</span>
+        <span class="chip mono">Knowledge Graphs</span>
+        <span class="chip mono">NLP / NER</span>
+      </div>
+    </div>
+    <div class="scrollcue"><span>SCROLL</span><span class="bar"></span></div>
+  </header>
+
+  <!-- ======================= MARQUEE ======================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="mq">
+      <div class="marquee-item">YOLOv26n</div>
+      <div class="marquee-item">ByteTrack</div>
+      <div class="marquee-item">ConvNeXt</div>
+      <div class="marquee-item">Anti-UAV</div>
+      <div class="marquee-item">BERT</div>
+      <div class="marquee-item">DAPT</div>
+      <div class="marquee-item">BILOU</div>
+      <div class="marquee-item">spaCy</div>
+      <div class="marquee-item">CrewAI</div>
+      <div class="marquee-item">LangGraph</div>
+      <div class="marquee-item">Agent Zero</div>
+      <div class="marquee-item">GraphRAG</div>
+      <div class="marquee-item">Neo4j</div>
+      <div class="marquee-item">Qdrant</div>
+      <div class="marquee-item">Valkey</div>
+      <div class="marquee-item">Ollama</div>
+      <div class="marquee-item">Llama 3.1</div>
+      <div class="marquee-item">PyMuPDF</div>
+      <div class="marquee-item">Docling</div>
+      <div class="marquee-item">PaddleOCR</div>
+      <div class="marquee-item">FastAPI</div>
+      <div class="marquee-item">Docker</div>
+      <div class="marquee-item">PostgreSQL</div>
+      <div class="marquee-item">PyTorch</div>
+    </div>
+  </div>
+
+  <!-- ======================= PROFILE ======================= -->
+  <section class="section" id="profile">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">// Profile</div>
+        <h2>Turning raw signal into intelligence.</h2>
+      </div>
+      <div class="profile-grid">
+        <div class="reveal">
+          <p class="profile-lead">AI/ML engineer focused on the messy edge of the real world — video feeds, dense
+            documents, and live news streams — and the systems that turn them into decisions.</p>
+          <p class="profile-body">At <b>Shyena Solutions</b> I lead the machine-learning work on an autonomous
+            drone-surveillance platform and build the agentic, <b>GraphRAG</b> core of an enterprise <b>OSINT</b>
+            intelligence system. Alongside that I've shipped production full-stack software at <b>Codegnan</b>, and
+            earlier benchmarked deep-learning architectures for maritime vessel recognition at DRDO's <b>CAIR</b>. I
+            like owning problems end to end: from dataset and annotation, through model training and evaluation, to
+            optimization and deployment.</p>
+        </div>
+        <div class="facts reveal d1">
+          <div class="fact"><span class="k">Role</span><span class="v"><b>AI/ML Engineer</b></span></div>
+          <div class="fact"><span class="k">Based in</span><span class="v">Bengaluru, India</span></div>
+          <div class="fact"><span class="k">Focus</span><span class="v">CV · LLMs · Graphs</span></div>
+          <div class="fact"><span class="k">Degree</span><span class="v">B.E. CSE — DSCE '24</span></div>
+          <div class="fact"><span class="k">Status</span><span class="v"><b>Open to AI/ML roles</b></span></div>
+        </div>
+      </div>
+      <div class="caps">
+        <div class="cap bracketed reveal">
+          <div class="num mono">C-01</div>
+          <h3>Computer Vision</h3>
+          <p>Real-time detection &amp; tracking — YOLOv26n, ByteTrack, and ConvNeXt classification, from dataset to
+            deployment.</p>
+        </div>
+        <div class="cap bracketed reveal d1">
+          <div class="num mono">C-02</div>
+          <h3>LLMs &amp; Agentic AI</h3>
+          <p>Multi-agent orchestration with CrewAI, LangGraph, and Agent Zero over locally-hosted Llama 3.1.</p>
+        </div>
+        <div class="cap bracketed reveal d2">
+          <div class="num mono">C-03</div>
+          <h3>Retrieval &amp; Graphs</h3>
+          <p>GraphRAG on Neo4j and Qdrant for context-aware retrieval across large OSINT corpora.</p>
+        </div>
+        <div class="cap bracketed reveal d3">
+          <div class="num mono">C-04</div>
+          <h3>NLP / NER</h3>
+          <p>Domain-adaptive BERT with DAPT, BILOU tagging, and active-learning annotation pipelines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= SKILLS ======================= -->
+  <section class="section alt" id="skills">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">// Capabilities</div>
+        <h2>Technical stack</h2>
+        <p>The tools I reach for, grouped by where they sit in the pipeline.</p>
+      </div>
+      <div class="skillset">
+        <div class="skillcard reveal">
+          <h3><span class="idx mono">01</span> Languages</h3>
+          <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">C/C++</span>
+          </div>
+        </div>
+        <div class="skillcard reveal d1">
+          <h3><span class="idx mono">02</span> ML &amp; Deep Learning</h3>
+          <div class="tags"><span class="tag">PyTorch</span><span class="tag">HF Transformers</span><span
+              class="tag">spaCy</span><span class="tag">BERT</span><span class="tag">NER</span><span
+              class="tag">DAPT</span><span class="tag">Fine-Tuning</span><span class="tag">Active Learning</span><span
+              class="tag">Model Eval</span></div>
+        </div>
+        <div class="skillcard reveal">
+          <h3><span class="idx mono">03</span> LLMs &amp; Agentic AI</h3>
+          <div class="tags"><span class="tag">LLMs</span><span class="tag">Multi-Agent AI</span><span
+              class="tag">CrewAI</span><span class="tag">LangGraph</span><span class="tag">Agent Zero</span><span
+              class="tag">RAG</span><span class="tag">GraphRAG</span><span class="tag">Prompt Engineering</span><span
+              class="tag">Ollama</span><span class="tag">Llama 3.1</span></div>
+        </div>
+        <div class="skillcard reveal d1">
+          <h3><span class="idx mono">04</span> Computer Vision</h3>
+          <div class="tags"><span class="tag">YOLOv26n</span><span class="tag">ConvNeXt</span><span
+              class="tag">ByteTrack</span><span class="tag">Object Detection</span><span class="tag">Image
+              Classification</span><span class="tag">Object Tracking</span><span class="tag">OpenCV</span></div>
+        </div>
+        <div class="skillcard reveal">
+          <h3><span class="idx mono">05</span> Graphs &amp; Databases</h3>
+          <div class="tags"><span class="tag">Neo4j</span><span class="tag">Qdrant</span><span
+              class="tag">PostgreSQL</span><span class="tag">Redis / Valkey</span></div>
+        </div>
+        <div class="skillcard reveal d1">
+          <h3><span class="idx mono">06</span> Data &amp; MLOps</h3>
+          <div class="tags"><span class="tag">Scrapy</span><span class="tag">Trafilatura</span><span
+              class="tag">Doccano</span><span class="tag">Label Studio</span><span class="tag">PaddleOCR</span><span
+              class="tag">Tesseract</span><span class="tag">PyMuPDF</span><span class="tag">Docling</span><span
+              class="tag">Docker</span><span class="tag">FastAPI</span><span class="tag">Git</span><span
+              class="tag">REST APIs</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= EXPERIENCE ======================= -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">// Fieldwork</div>
+        <h2>Experience</h2>
+      </div>
+      <div class="timeline">
+
+        <div class="tl-item reveal">
+          <div class="tl-top"><span class="tl-role">AI/ML Engineer Intern</span><span class="tl-date">Nov 2025 —
+              Present</span></div>
+          <div class="tl-org">Shyena Solutions <span class="loc">· Bengaluru, India</span></div>
+          <ul class="tl-list">
+            <li>Designed and fine-tuned domain-adaptive <b>BERT</b> models for maritime Named Entity Recognition —
+              running <b>DAPT</b>, migrating annotations from BIO to <b>BILOU</b>, and automating labeling with
+              <b>spaCy</b> across multiple active-learning iterations.
+            </li>
+            <li>Engineered the <b>GraphRAG</b>, knowledge-graph, and <b>multi-agent AI</b> components of an enterprise
+              <b>OSINT</b> platform using <b>LangGraph</b>, <b>CrewAI</b>, and <b>Agent Zero</b>, integrating
+              Ollama-hosted Llama 3.1 with <b>Neo4j</b>, Docker, and FastAPI.
+            </li>
+            <li>Built the OSINT data-ingestion pipeline with <b>Scrapy</b>, <b>Trafilatura</b>, and <b>PostgreSQL</b> —
+              de-duplication, domain filtering, and structured logging feeding downstream NLP, GraphRAG, and analysis
+              systems.</li>
+          </ul>
+          <div class="role-tags"><span class="t">BERT</span><span class="t">GraphRAG</span><span
+              class="t">CrewAI</span><span class="t">LangGraph</span><span class="t">Neo4j</span><span
+              class="t">FastAPI</span></div>
+        </div>
+
+        <div class="tl-item reveal d1">
+          <div class="tl-top"><span class="tl-role">Software Development Intern</span><span class="tl-date">Jul 2024 —
+              Present</span></div>
+          <div class="tl-org">Codegnan <span class="loc">· India</span></div>
+          <ul class="tl-list">
+            <li>Built production full-stack features across the <b>MERN stack</b> and <b>Next.js</b> — functional React
+              components, responsive Tailwind CSS interfaces, and Express.js / MongoDB backends.</li>
+            <li>Designed and tested <b>RESTful APIs</b> with Postman, and shipped projects to production on
+              <b>Netlify</b> and <b>Vercel</b> with streamlined CI/CD workflows.
+            </li>
+            <li>Managed version control with <b>Git</b> to maintain clean, production-ready code — the engineering
+              foundation I now bring to ML systems and MLOps.</li>
+          </ul>
+          <div class="role-tags"><span class="t">React</span><span class="t">Next.js</span><span
+              class="t">Express.js</span><span class="t">MongoDB</span><span class="t">REST APIs</span><span
+              class="t">CI/CD</span></div>
+        </div>
+
+        <div class="tl-item reveal d2">
+          <div class="tl-top"><span class="tl-role">Deep Learning Research Intern</span><span class="tl-date">Feb 2024 —
+              May 2024</span></div>
+          <div class="tl-org">Centre for Artificial Intelligence &amp; Robotics (CAIR), DRDO <span class="loc">·
+              Bengaluru, India</span></div>
+          <ul class="tl-list">
+            <li>Conducted a comparative study of <b>MobileNetV2</b>, <b>Xception</b>, <b>VGG-16</b>, and <b>Vision
+                Transformers</b> for ship image classification, benchmarking accuracy and computational efficiency.</li>
+          </ul>
+          <div class="role-tags"><span class="t">Vision Transformers</span><span class="t">CNNs</span><span
+              class="t">Image Classification</span><span class="t">Benchmarking</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= PROJECTS ======================= -->
+  <section class="section alt" id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">// Operations</div>
+        <h2>Selected projects</h2>
+        <p>Production-grade AI systems built end to end — each with a live look at what it does.</p>
+      </div>
+      <div class="projects">
+
+        <!-- ===== OP-01 DRONE ===== -->
+        <article class="project flagship bracketed reveal">
+          <div class="p-grid">
+            <div class="p-visual">
+              <div class="feedbar"><span class="rec">REC</span><span>CAM-01 · DETECT+TRACK</span><span>24 FPS</span>
+              </div>
+              <svg viewBox="0 0 600 340" role="img" aria-label="Drone detection and tracking visualization">
+                <defs>
+                  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#0C1626" />
+                    <stop offset="1" stop-color="#080B11" />
+                  </linearGradient>
+                </defs>
+                <rect width="600" height="340" fill="url(#sky)" />
+                <g class="s-grid">
+                  <line x1="0" y1="85" x2="600" y2="85" />
+                  <line x1="0" y1="170" x2="600" y2="170" />
+                  <line x1="0" y1="255" x2="600" y2="255" />
+                  <line x1="150" y1="0" x2="150" y2="340" />
+                  <line x1="300" y1="0" x2="300" y2="340" />
+                  <line x1="450" y1="0" x2="450" y2="340" />
+                </g>
+                <!-- radar sweep -->
+                <g opacity="0.5">
+                  <line x1="300" y1="170" x2="300" y2="20" stroke="var(--signal)" stroke-width="1.5" opacity="0.5">
+                    <animateTransform attributeName="transform" type="rotate" from="0 300 170" to="360 300 170" dur="6s"
+                      repeatCount="indefinite" />
+                  </line>
+                </g>
+                <!-- drone A -->
+                <g>
+                  <animateTransform attributeName="transform" type="translate" values="0 0; 0 -7; 0 0" dur="4s"
+                    repeatCount="indefinite" />
+                  <g transform="translate(190,140)" stroke="#AEB9C6" stroke-width="2" fill="none">
+                    <line x1="-16" y1="-10" x2="16" y2="10" />
+                    <line x1="16" y1="-10" x2="-16" y2="10" />
+                    <circle cx="-16" cy="-10" r="6" />
+                    <circle cx="16" cy="-10" r="6" />
+                    <circle cx="-16" cy="10" r="6" />
+                    <circle cx="16" cy="10" r="6" />
+                    <rect x="-6" y="-4" width="12" height="8" fill="#141C27" />
+                  </g>
+                  <g fill="none" stroke="var(--signal)" stroke-width="1.5">
+                    <path
+                      d="M150,108 h14 M212,108 h-14 M150,108 v14 M212,108 v-14 M150,172 h14 M212,172 h-14 M150,172 v-14 M212,172 v-14" />
+                    <animate attributeName="opacity" values="1;0.45;1" dur="1.8s" repeatCount="indefinite" />
+                  </g>
+                  <text class="s-mono s-amber" x="150" y="100" font-size="10">UAV 0.94</text>
+                  <text class="s-mono s-cyan" x="182" y="188" font-size="9">ID:07</text>
+                </g>
+                <!-- drone B + track trail -->
+                <polyline points="470,90 440,120 405,150 380,175" fill="none" stroke="var(--scan)" stroke-width="1.5"
+                  stroke-dasharray="2 5" opacity="0.7" />
+                <g>
+                  <animateTransform attributeName="transform" type="translate" values="0 0; 0 6; 0 0" dur="5s"
+                    repeatCount="indefinite" />
+                  <g transform="translate(380,175)" stroke="#AEB9C6" stroke-width="2" fill="none">
+                    <line x1="-13" y1="-8" x2="13" y2="8" />
+                    <line x1="13" y1="-8" x2="-13" y2="8" />
+                    <circle cx="-13" cy="-8" r="5" />
+                    <circle cx="13" cy="-8" r="5" />
+                    <circle cx="-13" cy="8" r="5" />
+                    <circle cx="13" cy="8" r="5" />
+                    <rect x="-5" y="-3" width="10" height="6" fill="#141C27" />
+                  </g>
+                  <g fill="none" stroke="var(--signal)" stroke-width="1.5">
+                    <path
+                      d="M350,150 h12 M410,150 h-12 M350,150 v12 M410,150 v-12 M350,200 h12 M410,200 h-12 M350,200 v-12 M410,200 v-12" />
+                    <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite" />
+                  </g>
+                  <text class="s-mono s-amber" x="350" y="142" font-size="10">UAV 0.88</text>
+                  <text class="s-mono s-cyan" x="380" y="216" font-size="9">ID:12</text>
+                </g>
+                <!-- HUD -->
+                <g stroke="var(--faint)" stroke-width="1" fill="none" opacity="0.8">
+                  <path
+                    d="M14,14 h18 M14,14 v18 M586,14 h-18 M586,14 v18 M14,326 h18 M14,326 v-18 M586,326 h-18 M586,326 v-18" />
+                </g>
+                <text class="s-mono s-amber" x="24" y="30" font-size="9">● TRACKING · 2 TARGETS</text>
+                <text class="s-mono s-faint" x="24" y="322" font-size="8">LAT 12.97 LON 77.59</text>
+                <text class="s-mono s-faint" x="512" y="322" font-size="8">FRAME 1042</text>
+              </svg>
+            </div>
+            <div class="p-content">
+              <div class="p-top"><span class="p-id mono">OP-01 · Computer Vision</span><span
+                  class="p-flag mono">Flagship</span></div>
+              <h3>Autonomous Drone Detection, Tracking &amp; Classification</h3>
+              <div class="p-stack mono">YOLOv26n · ConvNeXt · ByteTrack · Anti-UAV · PTZ</div>
+              <ul class="p-list">
+                <li>Leading ML for a production-grade autonomous drone-surveillance platform — owning the full pipeline:
+                  <b>detection, tracking, classification, training, evaluation, optimization, deployment</b>.
+                </li>
+                <li>Fine-tuning <b>YOLOv26n</b> for real-time detection on the <b>Anti-UAV</b> dataset, with
+                  <b>ByteTrack</b> multi-object tracking and a <b>ConvNeXt</b> classifier for drone family/model
+                  recognition.
+                </li>
+                <li>Designing dataset prep, augmentation, hyperparameter optimization, benchmarking, inference
+                  optimization, and PTZ camera integration.</li>
+              </ul>
+              <div class="p-scope"><span class="s">Role: ML Lead</span><span class="s">Real-time</span><span
+                  class="s">Edge deploy</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===== OP-02 AGENTS ===== -->
+        <article class="project bracketed reveal d1">
+          <div class="p-grid rev">
+            <div class="p-visual">
+              <div class="feedbar"><span class="rec">LIVE</span><span>ORCHESTRATOR · 5
+                  AGENTS</span><span>GraphRAG</span></div>
+              <svg viewBox="0 0 600 340" role="img" aria-label="Multi-agent orchestration network">
+                <rect width="600" height="340" fill="#080B11" />
+                <g class="s-grid">
+                  <line x1="0" y1="170" x2="600" y2="170" />
+                  <line x1="300" y1="0" x2="300" y2="340" />
+                </g>
+                <!-- edges (flowing) -->
+                <g stroke="var(--signal)" stroke-width="1.4" fill="none" opacity="0.55" stroke-dasharray="4 6">
+                  <line x1="300" y1="170" x2="140" y2="80">
+                    <animate attributeName="stroke-dashoffset" values="0;-20" dur="1.2s" repeatCount="indefinite" />
+                  </line>
+                  <line x1="300" y1="170" x2="470" y2="80">
+                    <animate attributeName="stroke-dashoffset" values="0;-20" dur="1.4s" repeatCount="indefinite" />
+                  </line>
+                  <line x1="300" y1="170" x2="500" y2="230">
+                    <animate attributeName="stroke-dashoffset" values="0;-20" dur="1.1s" repeatCount="indefinite" />
+                  </line>
+                  <line x1="300" y1="170" x2="300" y2="290">
+                    <animate attributeName="stroke-dashoffset" values="0;-20" dur="1.5s" repeatCount="indefinite" />
+                  </line>
+                  <line x1="300" y1="170" x2="110" y2="235">
+                    <animate attributeName="stroke-dashoffset" values="0;-20" dur="1.3s" repeatCount="indefinite" />
+                  </line>
+                </g>
+                <!-- satellite nodes -->
+                <g class="s-mono" font-size="9" text-anchor="middle">
+                  <g>
+                    <circle cx="140" cy="80" r="16" fill="#111925" stroke="var(--scan)" stroke-width="1.5" /><text
+                      class="s-cyan" x="140" y="83">RET</text><text class="s-faint" x="140" y="112">Retrieve</text>
+                  </g>
+                  <g>
+                    <circle cx="470" cy="80" r="16" fill="#111925" stroke="var(--scan)" stroke-width="1.5" /><text
+                      class="s-cyan" x="470" y="83">WEB</text><text class="s-faint" x="470" y="112">Web search</text>
+                  </g>
+                  <g>
+                    <circle cx="500" cy="230" r="16" fill="#111925" stroke="var(--scan)" stroke-width="1.5" /><text
+                      class="s-cyan" x="500" y="233">RSN</text><text class="s-faint" x="500" y="262">Reason</text>
+                  </g>
+                  <g>
+                    <circle cx="300" cy="290" r="16" fill="#111925" stroke="var(--scan)" stroke-width="1.5" /><text
+                      class="s-cyan" x="300" y="293">SUM</text><text class="s-faint" x="300" y="320">Summarize</text>
+                  </g>
+                  <g>
+                    <circle cx="110" cy="235" r="16" fill="#111925" stroke="var(--scan)" stroke-width="1.5" /><text
+                      class="s-cyan" x="110" y="238">MEM</text><text class="s-faint" x="110" y="264">Memory</text>
+                  </g>
+                </g>
+                <!-- orchestrator -->
+                <circle cx="300" cy="170" r="26" fill="#1A130A" stroke="var(--signal)" stroke-width="2">
+                  <animate attributeName="stroke-opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
+                </circle>
+                <text class="s-mono s-amber" x="300" y="167" font-size="10" text-anchor="middle">ORCH</text>
+                <text class="s-mono s-amber" x="300" y="179" font-size="7" text-anchor="middle">CrewAI</text>
+                <!-- neo4j cluster -->
+                <g transform="translate(500,300)" opacity="0.9">
+                  <g stroke="var(--graph)" stroke-width="1" opacity="0.5">
+                    <line x1="0" y1="0" x2="24" y2="-10" />
+                    <line x1="0" y1="0" x2="18" y2="16" />
+                    <line x1="24" y1="-10" x2="18" y2="16" />
+                  </g>
+                  <circle cx="0" cy="0" r="4" fill="var(--graph)" />
+                  <circle cx="24" cy="-10" r="4" fill="var(--graph)" />
+                  <circle cx="18" cy="16" r="4" fill="var(--graph)" />
+                  <text class="s-mono s-faint" x="-12" y="30" font-size="8">NEO4J</text>
+                </g>
+              </svg>
+            </div>
+            <div class="p-content">
+              <div class="p-top"><span class="p-id mono">OP-02 · Agentic AI</span></div>
+              <h3>OSINT Multi-Agent Intelligence Platform</h3>
+              <div class="p-stack mono">CrewAI · LangGraph · Agent Zero · Ollama · Neo4j · Valkey</div>
+              <ul class="p-list">
+                <li>Developed the AI backbone of a production-grade <b>OSINT</b> platform using <b>CrewAI</b>,
+                  <b>LangGraph</b>, and <b>Agent Zero</b> to orchestrate retrieval, web search, reasoning, memory, and
+                  summarization.
+                </li>
+                <li>Implemented a <b>GraphRAG</b> architecture over <b>Neo4j</b>, <b>Valkey/Redis</b>, and Ollama-hosted
+                  LLMs for context-aware retrieval and conversational intelligence across large-scale data.</li>
+              </ul>
+              <div class="p-scope"><span class="s">Multi-agent</span><span class="s">On-prem LLMs</span><span
+                  class="s">Conversational</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===== OP-03 DOCS ===== -->
+        <article class="project bracketed reveal d2">
+          <div class="p-grid">
+            <div class="p-visual">
+              <div class="feedbar"><span class="rec">PROC</span><span>PARSE · CHUNK · EMBED</span><span>Qdrant</span>
+              </div>
+              <svg viewBox="0 0 600 340" role="img" aria-label="Document extraction to vector retrieval pipeline">
+                <rect width="600" height="340" fill="#080B11" />
+                <!-- document -->
+                <g>
+                  <rect x="40" y="55" width="150" height="230" rx="3" fill="#0F141C" stroke="var(--line-2)" />
+                  <g stroke="#3A4756" stroke-width="3" stroke-linecap="round">
+                    <line x1="58" y1="80" x2="172" y2="80" />
+                    <line x1="58" y1="95" x2="150" y2="95" />
+                    <line x1="58" y1="110" x2="168" y2="110" />
+                  </g>
+                  <!-- table -->
+                  <g stroke="var(--scan)" stroke-width="1" opacity="0.8" fill="none">
+                    <rect x="58" y="128" width="114" height="46" />
+                    <line x1="58" y1="143" x2="172" y2="143" />
+                    <line x1="58" y1="158" x2="172" y2="158" />
+                    <line x1="96" y1="128" x2="96" y2="174" />
+                    <line x1="134" y1="128" x2="134" y2="174" />
+                  </g>
+                  <!-- image block -->
+                  <g>
+                    <rect x="58" y="188" width="114" height="60" fill="#12202B" stroke="var(--graph)" opacity="0.9" />
+                    <path d="M64,244 l24,-30 l18,18 l14,-12 l26,24 z" fill="#1E3446" />
+                    <circle cx="150" cy="204" r="6" fill="#2A4A5E" />
+                  </g>
+                  <g stroke="#3A4756" stroke-width="3" stroke-linecap="round">
+                    <line x1="58" y1="262" x2="160" y2="262" />
+                  </g>
+                  <!-- scan line -->
+                  <rect x="40" y="55" width="150" height="3" fill="var(--signal)" opacity="0.85">
+                    <animate attributeName="y" values="55;282;55" dur="3.5s" repeatCount="indefinite" />
+                  </rect>
+                  <text class="s-mono s-faint" x="40" y="300" font-size="8">PDF · OCR · TABLES · IMAGES</text>
+                </g>
+                <!-- arrow -->
+                <g stroke="var(--faint)" stroke-width="1.4" fill="none">
+                  <path d="M198,150 h44" />
+                  <path d="M236,144 l8,6 l-8,6" />
+                </g>
+                <!-- chunks -->
+                <g>
+                  <rect x="250" y="110" width="86" height="20" rx="2" fill="#101821" stroke="var(--line-2)" />
+                  <rect x="250" y="140" width="86" height="20" rx="2" fill="#101821" stroke="var(--line-2)" />
+                  <rect x="250" y="170" width="86" height="20" rx="2" fill="#101821" stroke="var(--line-2)" />
+                  <text class="s-mono s-cyan" x="258" y="124" font-size="8">chunk_01</text>
+                  <text class="s-mono s-cyan" x="258" y="154" font-size="8">chunk_02</text>
+                  <text class="s-mono s-cyan" x="258" y="184" font-size="8">chunk_03</text>
+                  <text class="s-mono s-faint" x="250" y="102" font-size="8">CHUNKS</text>
+                </g>
+                <!-- arrow 2 -->
+                <g stroke="var(--faint)" stroke-width="1.4" fill="none">
+                  <path d="M344,150 h40" />
+                  <path d="M378,144 l8,6 l-8,6" />
+                </g>
+                <!-- vector space -->
+                <g>
+                  <rect x="392" y="60" width="168" height="220" rx="3" fill="#0B0F16" stroke="var(--line-2)" />
+                  <text class="s-mono s-amber" x="400" y="52" font-size="9">QDRANT · VECTOR STORE</text>
+                  <g fill="var(--muted)">
+                    <circle cx="420" cy="100" r="2.5">
+                      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="470" cy="90" r="2.5" />
+                    <circle cx="520" cy="120" r="2.5">
+                      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="430" cy="150" r="2.5" />
+                    <circle cx="500" cy="170" r="2.5">
+                      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="540" cy="210" r="2.5" />
+                    <circle cx="415" cy="200" r="2.5" />
+                    <circle cx="480" cy="235" r="2.5">
+                      <animate attributeName="opacity" values="1;0.4;1" dur="2.2s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="525" cy="255" r="2.5" />
+                    <circle cx="450" cy="255" r="2.5" />
+                  </g>
+                  <!-- query + nearest -->
+                  <g stroke="var(--signal)" stroke-width="1" opacity="0.8">
+                    <line x1="475" y1="150" x2="470" y2="90" />
+                    <line x1="475" y1="150" x2="430" y2="150" />
+                    <line x1="475" y1="150" x2="500" y2="170" />
+                  </g>
+                  <circle cx="475" cy="150" r="5" fill="none" stroke="var(--signal)" stroke-width="1.5">
+                    <animate attributeName="r" values="5;9;5" dur="1.8s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="475" cy="150" r="3" fill="var(--signal)" />
+                  <text class="s-mono s-amber" x="482" y="146" font-size="8">query</text>
+                </g>
+              </svg>
+            </div>
+            <div class="p-content">
+              <div class="p-top"><span class="p-id mono">OP-03 · Document AI</span></div>
+              <h3>OSINT Multi-Modal Document Intelligence Pipeline</h3>
+              <div class="p-stack mono">PyMuPDF · Docling · PaddleOCR · Tesseract · Qdrant</div>
+              <ul class="p-list">
+                <li>Developed the document-ingestion pipeline for the OSINT platform, extracting <b>text, tables, and
+                    images</b> from complex technical PDFs.</li>
+                <li>Built a semantic indexing pipeline on <b>Qdrant</b> for high-accuracy retrieval and <b>RAG</b> over
+                  multimodal intelligence documents.</li>
+              </ul>
+              <div class="p-scope"><span class="s">Multi-modal</span><span class="s">OCR</span><span class="s">Vector
+                  search</span></div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CREDENTIALS ======================= -->
+  <section class="section" id="credentials">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">// Credentials</div>
+        <h2>Education &amp; recognition</h2>
+      </div>
+      <div class="cred-grid">
+        <div class="cred-card reveal">
+          <h3>Education</h3>
+          <div class="edu-deg">B.E. — Computer Science &amp; Engineering</div>
+          <div class="edu-school">Dayananda Sagar College of Engineering</div>
+          <div class="edu-meta"><span>Graduated <b>June 2024</b></span><span>GPA <b>7.72 / 10</b></span></div>
+        </div>
+        <div class="cred-card reveal d1">
+          <h3>Recognition</h3>
+          <div class="award"><span class="medal mono">2ND</span>
+            <div>
+              <div class="aw-t">hAIothon — Runner-up</div>
+              <div class="aw-s">2nd place at an inter-college Artificial Intelligence hackathon.</div>
+            </div>
+          </div>
+          <div class="award"><span class="medal mono">BEST</span>
+            <div>
+              <div class="aw-t">Best Project Award</div>
+              <div class="aw-s">Awarded at the college Project Open Day.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= RESUME ======================= -->
+  <section class="section alt" id="resume">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">// Dossier</div>
+        <h2>Résumé</h2>
+        <p>The full record — viewable here, or save a clean PDF straight from your browser.</p>
+      </div>
+      <div class="resume-toolbar reveal">
+        <span class="hint mono">// tip: "Save as PDF" prints only this document</span>
+        <div style="display:flex; gap:10px;">
+          <button class="btn btn-primary" onclick="window.print()">Download PDF <span class="arrow">↓</span></button>
+        </div>
+      </div>
+
+      <!-- ==========================================================
+         EDIT YOUR RÉSUMÉ HERE — mirrors your LaTeX. Change text and
+         it updates the page + the "Download PDF" output.
+         ========================================================== -->
+      <div class="resume-paper reveal d1" id="resumeDoc">
+
+        <div class="rp-name">VIGNESH N</div>
+
+        <div class="rp-contact">
+          8951288231 &nbsp;|&nbsp;
+          <a href="mailto:vigneshn6236@gmail.com">vigneshn6236@gmail.com</a>
+          &nbsp;|&nbsp;
+          <a href="https://linkedin.com/in/vigneshn6236">linkedin.com/in/vigneshn6236</a>
+          &nbsp;|&nbsp;
+          <a href="https://github.com/vignesh6236">github.com/vignesh6236</a>
+          &nbsp;|&nbsp;
+          <a href="https://vignesh-n.netlify.app">Portfolio</a>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="rp-sec">
+          <h4>Professional Summary</h4>
+          <p>
+            Artificial Intelligence and Machine Learning engineer specializing in
+            Natural Language Processing, Computer Vision, LLMs, Multi-Agent AI
+            Frameworks, Knowledge Graphs, and Retrieval-Augmented Generation (RAG).
+            Experienced in building production-grade AI systems spanning data
+            collection, annotation, model fine-tuning, evaluation, and deployment
+            across computer vision, NER, GraphRAG, autonomous drone surveillance,
+            and OSINT intelligence platforms.
+          </p>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="rp-sec">
+          <h4>Technical Skills</h4>
+
+          <dl class="rp-skill">
+            <dt>Languages</dt>
+            <dd>Python, SQL, C/C++</dd>
+
+            <dt>ML &amp; Deep Learning</dt>
+            <dd>
+              PyTorch, Hugging Face Transformers, spaCy, BERT, Named Entity
+              Recognition (NER), Domain-Adaptive Pretraining (DAPT), Fine-Tuning,
+              Active Learning, Model Evaluation
+            </dd>
+
+            <dt>LLMs &amp; Agentic AI</dt>
+            <dd>
+              LLMs, Multi-Agent AI, Agentic AI, CrewAI, LangGraph, Agent Zero,
+              Retrieval-Augmented Generation (RAG), GraphRAG, Prompt Engineering,
+              Ollama, Llama 3.1
+            </dd>
+
+            <dt>Computer Vision</dt>
+            <dd>
+              YOLOv26n, ConvNeXt, ByteTrack, Object Detection, Image Classification,
+              Object Tracking, OpenCV
+            </dd>
+
+            <dt>Graphs &amp; Databases</dt>
+            <dd>
+              Neo4j, Qdrant (Vector DB), PostgreSQL, Redis / Valkey
+            </dd>
+
+            <dt>Data &amp; MLOps</dt>
+            <dd>
+              Web Scraping (Scrapy, Trafilatura), Annotation (Doccano, Label Studio),
+              OCR (PaddleOCR, Tesseract), PyMuPDF, Docling, Docker, FastAPI, Git,
+              REST APIs
+            </dd>
+          </dl>
+        </div>
+
+        <!-- Experience -->
+        <div class="rp-sec">
+          <h4>Experience</h4>
+
+          <div class="rp-entry">
+            <div class="rp-erow">
+              <span class="t">Shyena Solutions</span>
+              <span class="d">Nov 2025 – Present</span>
+            </div>
+
+            <div class="rp-sub">
+              <span>Intern</span>
+              <span>Bengaluru, India</span>
+            </div>
+
+            <ul class="rp-ul">
+              <li>
+                Designed and fine-tuned domain-adaptive <strong>BERT</strong> models
+                for maritime Named Entity Recognition, performing
+                <strong>DAPT</strong>, migrating annotations from BIO to
+                <strong>BILOU</strong>, and automating labeling using
+                <strong>spaCy</strong> through multiple active-learning iterations.
+              </li>
+
+              <li>
+                Engineered the <strong>GraphRAG</strong>, knowledge graph, and
+                <strong>multi-agent AI</strong> components of an enterprise
+                <strong>OSINT</strong> platform using <strong>LangGraph</strong>,
+                <strong>CrewAI</strong>, and <strong>Agent Zero</strong>, integrating
+                <strong>Ollama</strong>-hosted Llama 3.1 with
+                <strong>Neo4j</strong>, Docker, and FastAPI.
+              </li>
+
+              <li>
+                Built the OSINT data-ingestion pipeline using
+                <strong>Scrapy</strong>, <strong>Trafilatura</strong>, and
+                <strong>PostgreSQL</strong>, implementing de-duplication, domain
+                filtering, and structured logging for downstream NLP, GraphRAG, and
+                intelligence-analysis systems.
+              </li>
+            </ul>
+          </div>
+
+          <div class="rp-entry">
+            <div class="rp-erow">
+              <span class="t">
+                Centre for Artificial Intelligence and Robotics (CAIR), DRDO
+              </span>
+
+              <span class="d">Feb 2024 – May 2024</span>
+            </div>
+
+            <div class="rp-sub">
+              <span>Deep Learning Research Intern</span>
+              <span>Bengaluru, India</span>
+            </div>
+
+            <ul class="rp-ul">
+              <li>
+                Conducted a comparative study of MobileNetV2, Xception, VGG-16, and
+                Vision Transformers for ship image classification, benchmarking
+                accuracy and computational efficiency.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="rp-sec">
+
+          <h4>Key Projects</h4>
+
+          <div class="rp-proj-h">
+            <span class="t">
+              Autonomous Drone Detection, Tracking &amp; Classification Platform
+            </span>
+
+            <span class="s">
+              YOLOv26n, ConvNeXt, ByteTrack, Anti-UAV
+            </span>
+          </div>
+
+          <ul class="rp-ul">
+            <li>
+              Leading the machine learning development of a production-grade
+              autonomous drone surveillance platform, owning the end-to-end AI
+              pipeline covering detection, tracking, classification, model training,
+              evaluation, optimization, and deployment.
+            </li>
+
+            <li>
+              Fine-tuning <strong>YOLOv26n</strong> for real-time drone detection on
+              the Anti-UAV dataset, integrating <strong>ByteTrack</strong> for
+              multi-object tracking, and developing a
+              <strong>ConvNeXt</strong>-based classifier for drone family/model
+              recognition.
+            </li>
+
+            <li>
+              Designing the complete computer vision pipeline including dataset
+              preparation, augmentation, hyperparameter optimization, benchmarking,
+              inference optimization, and PTZ camera integration.
+            </li>
+          </ul>
+
+          <div class="rp-proj-h">
+            <span class="t">
+              OSINT Multi-Agent Intelligence Platform
+            </span>
+
+            <span class="s">
+              CrewAI, LangGraph, Agent Zero, Ollama, Neo4j, Valkey
+            </span>
+          </div>
+
+          <ul class="rp-ul">
+            <li>
+              Developed the AI backbone of a production-grade
+              <strong>OSINT</strong> platform using <strong>CrewAI</strong>,
+              <strong>LangGraph</strong>, and <strong>Agent Zero</strong> to
+              orchestrate retrieval, web search, reasoning, memory, and intelligence
+              summarization.
+            </li>
+
+            <li>
+              Implemented a <strong>GraphRAG</strong> architecture integrating
+              Neo4j, Valkey/Redis, and Ollama-hosted LLMs for context-aware retrieval
+              and conversational intelligence across large-scale OSINT data.
+            </li>
+          </ul>
+
+          <div class="rp-proj-h">
+            <span class="t">
+              OSINT Multi-Modal Document Intelligence Pipeline
+            </span>
+
+            <span class="s">
+              PyMuPDF, Docling, PaddleOCR, Tesseract, Qdrant
+            </span>
+          </div>
+
+          <ul class="rp-ul">
+            <li>
+              Developed the document-ingestion pipeline for the OSINT platform,
+              extracting text, tables, and images from complex technical PDFs.
+            </li>
+
+            <li>
+              Built a semantic indexing pipeline using Qdrant to enable
+              high-accuracy retrieval and RAG over multimodal intelligence documents.
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CONTACT ======================= -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="contact-inner">
+        <div class="contact-lead reveal">
+          <div class="eyebrow" style="margin-bottom:16px;">// Contact</div>
+          <h2>Let's build something that thinks.</h2>
+          <p>Open to AI/ML engineering roles and collaborations in computer vision, LLM systems, and applied
+            intelligence. The fastest way to reach me is email.</p>
+          <a href="mailto:vigneshn6236@gmail.com" class="btn btn-primary">Say hello <span class="arrow">↗</span></a>
+        </div>
+        <div class="contact-links reveal d1">
+          <a class="clink" href="mailto:vigneshn6236@gmail.com"><span class="lbl mono">Email</span><span
+              class="val">vigneshn6236@gmail.com</span></a>
+          <a class="clink" href="tel:+918951288231"><span class="lbl mono">Phone</span><span class="val">+91 89512
+              88231</span></a>
+          <a class="clink" href="https://linkedin.com/in/vigneshn6236" target="_blank" rel="noopener"><span
+              class="lbl mono">LinkedIn</span><span class="val">/in/vigneshn6236</span></a>
+          <a class="clink" href="https://github.com/vignesh6236" target="_blank" rel="noopener"><span
+              class="lbl mono">GitHub</span><span class="val">/vignesh6236</span></a>
+          <a class="clink" href="https://vignesh-n.netlify.app" target="_blank" rel="noopener"><span
+              class="lbl mono">Portfolio</span><span class="val">vignesh-n.netlify.app</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Vignesh N — AI/ML Engineer</span>
+      <span>Built for signal, not noise.</span>
+    </div>
+  </footer>
+
+  <script>
+    /* nav + mobile menu */
+    const nav = document.getElementById('nav'), navLinks = document.getElementById('navLinks'), burger = document.getElementById('burger');
+    addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+    burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    /* scroll reveal */
+    const io = new IntersectionObserver((es) => { es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }) }, { threshold: .12, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    /* hero ticker */
+    const ticker = document.getElementById('ticker');
+    const feed = ['drone detection', 'maritime NER', 'OSINT graphs', 'multi-agent reasoning', 'GraphRAG retrieval', 'ByteTrack tracking'];
+    let ti = 0; setInterval(() => { ti = (ti + 1) % feed.length; ticker.textContent = feed[ti]; }, 2600);
+
+    /* duplicate marquee for seamless loop */
+    (function () { const mq = document.getElementById('mq'); if (mq) mq.innerHTML += mq.innerHTML; })();
+
+    /* reduced motion: pause SMIL */
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('svg').forEach(s => { try { s.pauseAnimations(); } catch (e) { } });
+    }
+
+    /* ---- hero canvas: recon graph (detection over knowledge graph) ---- */
+    (function () {
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const canvas = document.getElementById('recon'), ctx = canvas.getContext('2d');
+      const LABELS = ['CV', 'NLP', 'LLM', 'RAG', 'KG', 'YOLO', 'BERT', 'Neo4j', 'Agent', 'Qdrant', 'OSINT', 'DAPT', 'Track', 'Graph'];
+      let W, H, DPR, nodes = [], reticle = null;
+      function size() { DPR = Math.min(devicePixelRatio || 1, 2); W = canvas.clientWidth; H = canvas.clientHeight; canvas.width = W * DPR; canvas.height = H * DPR; ctx.setTransform(DPR, 0, 0, DPR, 0, 0); }
+      function seed() { const n = Math.max(14, Math.min(30, Math.floor(W / 58))); nodes = Array.from({ length: n }, (_, i) => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .22, vy: (Math.random() - .5) * .22, r: Math.random() * 1.6 + 1.2, label: Math.random() < .5 ? LABELS[i % LABELS.length] : null })); }
+      function lock() { const n = nodes[Math.floor(Math.random() * nodes.length)]; reticle = { node: n, t: 0, label: n.label || LABELS[Math.floor(Math.random() * LABELS.length)] }; }
+      function frame() {
+        ctx.clearRect(0, 0, W, H);
+        for (let i = 0; i < nodes.length; i++)for (let j = i + 1; j < nodes.length; j++) { const a = nodes[i], b = nodes[j], d = Math.hypot(a.x - b.x, a.y - b.y); if (d < 150) { ctx.strokeStyle = `rgba(70,199,232,${(1 - d / 150) * .22})`; ctx.lineWidth = .6; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); } }
+        nodes.forEach(n => { if (!reduce) { n.x += n.vx; n.y += n.vy; if (n.x < 0 || n.x > W) n.vx *= -1; if (n.y < 0 || n.y > H) n.vy *= -1; } ctx.fillStyle = 'rgba(180,196,210,.55)'; ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, 7); ctx.fill(); if (n.label) { ctx.font = '10px "IBM Plex Mono",monospace'; ctx.fillStyle = 'rgba(133,147,163,.5)'; ctx.fillText(n.label, n.x + 7, n.y + 3); } });
+        if (reticle) { const n = reticle.node; reticle.t += reduce ? 1 : .045; const p = Math.min(reticle.t, 1); const s = 34 - 18 * p; const a = p < 1 ? p : (reticle.t < 3 ? 1 : Math.max(0, 1 - (reticle.t - 3))); ctx.strokeStyle = `rgba(255,176,32,${a})`; ctx.lineWidth = 1.4; const L = 10;[[-1, -1], [1, -1], [1, 1], [-1, 1]].forEach(([cx, cy]) => { const x = n.x + cx * s, y = n.y + cy * s; ctx.beginPath(); ctx.moveTo(x, y + cy * -L); ctx.lineTo(x, y); ctx.lineTo(x + cx * -L, y); ctx.stroke(); }); if (p >= 1) { ctx.font = '10px "IBM Plex Mono",monospace'; ctx.fillStyle = `rgba(255,176,32,${a})`; ctx.fillText('▸ ' + reticle.label, n.x + s + 6, n.y - s + 4); } if (reticle.t > 4.2) reticle = null; }
+        requestAnimationFrame(frame);
+      }
+      function boot() { size(); seed(); if (!reduce) { lock(); setInterval(() => { if (!reticle) lock(); }, 2800); } else { lock(); } frame(); }
+      addEventListener('resize', () => { size(); seed(); }); boot();
+    })();
+  </script>
 </body>
 
 </html>
